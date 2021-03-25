@@ -1,6 +1,6 @@
-# Download All File Versions from a GitHub Repository
+# Download All Versions of a File from a GitHub Repository
 
-This simple script enables users to download all versions of a file (past & present) in a GitHub repository, allowing them to run various analyses on all the file versions.
+This simple script enables users to quickly download all versions of a file (past & present) in a single branch of a GitHub repository, allowing them to run various analyses on all the file versions.
 
 ## Prerequisites
 

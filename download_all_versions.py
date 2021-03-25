@@ -45,6 +45,8 @@ def get_headers():
 def run_download(author, repo_name, branch, file_path, output_dir,
         limit_by_day=None, overwrite=False):
     """
+    For help: `python download_all_versions.py --help`
+
     Sample usage:
     `python download_all_versions.py --author youyanggu --repo_name covid19_projections --branch gh-pages --file_path index.md --output_dir output --limit_by_day last`
 
@@ -63,6 +65,7 @@ def run_download(author, repo_name, branch, file_path, output_dir,
     assert limit_by_day in [None, 'first', 'last'], limit_by_day
 
     os.makedirs(output_dir, exist_ok=True)
+    file_basename = os.path.basename(file_path)
 
     if get_headers():
         print('Using personal GitHub access token (max 5000 calls per hour)')
@@ -113,7 +116,7 @@ def run_download(author, repo_name, branch, file_path, output_dir,
     commit_date_to_sha_and_fname = {}
     for i, commit_date in enumerate(commit_dates):
         commit_date_str = str(commit_date).replace(' ', '_').replace(':', '')
-        result_path =  f'{output_dir}/{file_path}_{commit_date_str}'
+        result_path =  f'{output_dir}/{file_basename}_{commit_date_str}'
         if commit_date not in commit_date_to_sha_and_fname:
             commit_date_to_sha_and_fname[commit_date] = (all_commits[i]['sha'], result_path)
 
@@ -149,7 +152,7 @@ if __name__ == '__main__':
     parser.add_argument('--author', help='Author name', required=True)
     parser.add_argument('--repo_name', help='Repo name', required=True)
     parser.add_argument('--branch', help='Branch name', default='main')
-    parser.add_argument('--file_path', help='Path of file in repo', required=True)
+    parser.add_argument('--file_path', help='Relative path of file in the repo', required=True)
     parser.add_argument('--output_dir', help='Output directory location', required=True)
     parser.add_argument('--limit_by_day', help=('If you only want to keep the first or'
         ' last file on each commit date, specify `first` or `last`'), choices=['first', 'last'])
