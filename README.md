@@ -1,6 +1,6 @@
-# Download All File Versions
+# Download All File Versions from a GitHub Repository
 
-This repo contains a script that enables you to download all versions of a file (past and present) in a GitHub repository, enabling the user to run various analyses on all the file versions.
+This repo contains a script that enables you to download all versions of a file (past & present) in a GitHub repository, enabling the user to run various analyses on all the file versions.
 
 ## Prerequisites
 
@@ -10,8 +10,14 @@ Unauthenticated clients can make a maximum of 60 requests per hour on the GitHub
 
 ## Usage Help
 
-`python download_all_versions.py --help`
+```
+python download_all_versions.py --help
+```
 
 ## Sample Usage
 
-`python download_all_versions.py --author youyanggu --repo_name covid19_projections --branch gh-pages --file_path index.md --output_dir output --limit_by_day last`
+```
+python download_all_versions.py --author youyanggu --repo_name covid19_projections --branch gh-pages --file_path index.md --output_dir output --limit_by_day last
+```
+
+The above command download all versions of [index.md](https://github.com/youyanggu/covid19_projections/blob/gh-pages/index.md) from the `gh-pages` branch of the following repo: https://github.com/youyanggu/covid19_projections. Saves all versions to the `output` directory. If there are multiple versions on the same commit date, we take the last one.
