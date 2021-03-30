@@ -17,7 +17,7 @@ python download_all_versions.py --help
 ## Sample Usage
 
 ```
-python download_all_versions.py --author youyanggu --repo_name covid19_projections --branch gh-pages --file_path index.md --output_dir output --limit_by_day last
+python download_all_versions.py --author CSSEGISandData --repo_name COVID-19 --branch master --file_path csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv --output_dir output_jhu_deaths --limit_by_day last
 ```
 
-The above command download all versions of [index.md](https://github.com/youyanggu/covid19_projections/blob/gh-pages/index.md) from the `gh-pages` branch of the following repo: https://github.com/youyanggu/covid19_projections. Saves all versions to the `output` directory. If there are multiple versions on the same commit date, we take the last one.
+The above command download all versions of [JHU US Deaths Time Series data](https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv) from the `master` branch of the following repo: https://github.com/CSSEGISandData/COVID-19. Saves all versions to the `output_jhu_deaths` directory. If there are multiple versions on the same commit date, we take the last one.
