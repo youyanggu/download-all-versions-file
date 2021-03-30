@@ -28,7 +28,7 @@ def get_headers():
     To authenticate, you need to create a personal access token:
     https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
 
-    After creating the token, set it as an environment variable GITHUB_ACCESS_KEY
+    After creating the token, set it as an environment variable for GITHUB_ACCESS_TOKEN
 
     More details about authentication:
     https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#authentication

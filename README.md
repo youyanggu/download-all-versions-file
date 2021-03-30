@@ -6,7 +6,7 @@ This simple script enables users to quickly download all versions of a file (pas
 
 You must have Python 3 and the [`requests`](https://requests.readthedocs.io/en/master/) library installed. You can install the library by running the following command: `pip install requests`.
 
-Unauthenticated clients can make a maximum of 60 requests per hour on the GitHub API. To get more requests per hour, we'll need to [authenticate](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#authentication) using a personal access token.
+Unauthenticated clients can make a maximum of 60 requests per hour on the GitHub API. To get more requests per hour, we'll need to [authenticate](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api#authentication) using a personal access token. Once you have a token, please set it as your environment variable for `GITHUB_ACCESS_TOKEN` (for example, in your ~/.bashrc file).
 
 ## Usage Help
 
