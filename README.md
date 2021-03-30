@@ -17,7 +17,7 @@ python download_all_versions.py --help
 ## Sample Usage
 
 ```
-python download_all_versions.py --author CSSEGISandData --repo_name COVID-19 --branch master --file_path csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv --output_dir output_jhu_deaths --limit_by_day last
+python download_all_versions.py --author CSSEGISandData --repo_name COVID-19 --branch master --file_path csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv --output_dir output_jhu_deaths --limit_by_day first
 ```
 
-The above command download all versions of [JHU US Deaths Time Series data](https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv) from the `master` branch of the following repo: https://github.com/CSSEGISandData/COVID-19. Saves all versions to the `output_jhu_deaths` directory. If there are multiple versions on the same commit date, we take the last one.
+To avoid look-ahead bias in time series forecasting, we must only use the data that was available on the day the forecast is made. The above command download all historical versions of [JHU US Deaths Time Series data](https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv) from the Johns Hopkins CSSE repository: https://github.com/CSSEGISandData/COVID-19. It saves all versions to the `output_jhu_deaths` directory. If there are multiple versions on the same commit date, we take the first one.
